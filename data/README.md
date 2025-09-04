@@ -4,12 +4,12 @@
 PanTS
 ├── metadata.xlsx
 ├── ImageTr
-│   ├── PanTS_00000001/ct.npz
-│   ├── PanTS_00000002/ct.npz
+│   ├── PanTS_00000001/ct.nii.gz
+│   ├── PanTS_00000002/ct.nii.gz
 │   └── ...
 ├── ImageTe
-│   ├── PanTS_00009001/ct.npz
-│   ├── PanTS_00009002/ct.npz
+│   ├── PanTS_00009001/ct.nii.gz
+│   ├── PanTS_00009002/ct.nii.gz
 │   └── ...
 ├── ReportTr
 │   ├── PanTS_00000001/report.pdf
@@ -21,26 +21,26 @@ PanTS
 │   └── ...
 ├── LabelTr
 │   ├── PanTS_00000001/segmentations
-│   │   ├── pancreatic_lesion.npz
-│   │   ├── aorta.npz
-│   │   ├── gall_bladder.npz
+│   │   ├── pancreatic_lesion.nii.gz
+│   │   ├── aorta.nii.gz
+│   │   ├── gall_bladder.nii.gz
 │   │   └── ...
 │   ├── PanTS_00000002/segmentations
-│   │   ├── pancreatic_lesion.npz
-│   │   ├── aorta.npz
-│   │   ├── gall_bladder.npz
+│   │   ├── pancreatic_lesion.nii.gz
+│   │   ├── aorta.nii.gz
+│   │   ├── gall_bladder.nii.gz
 │   │   └── ...
 │   └── ...
 ├── LabelTe
 │   ├── PanTS_00009001/segmentations
-│   │   ├── pancreatic_lesion.npz
-│   │   ├── aorta.npz
-│   │   ├── gall_bladder.npz
+│   │   ├── pancreatic_lesion.nii.gz
+│   │   ├── aorta.nii.gz
+│   │   ├── gall_bladder.nii.gz
 │   │   └── ...
 │   ├── PanTS_00009002/segmentations
-│   │   ├── pancreatic_lesion.npz
-│   │   ├── aorta.npz
-│   │   ├── gall_bladder.npz
+│   │   ├── pancreatic_lesion.nii.gz
+│   │   ├── aorta.nii.gz
+│   │   ├── gall_bladder.nii.gz
 │   │   └── ...
 │   └── ...
 ```
