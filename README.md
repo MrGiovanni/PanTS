@@ -38,9 +38,7 @@ NeurIPS 2024 <br/>
 git clone https://github.com/MrGiovanni/PanTS.git
 cd PanTS
 bash download_PanTS_data.sh # It needs ~300GB storage
-bash download_PanTS_label.sh 
-# This work is currently under peer review, but early access is available!
-# To request the PanTSMini_Label.tar.gz file, please email Zongwei Zhou at zzhou82@jh.edu
+bash download_PanTS_label.sh http://www.cs.jhu.edu/~zongwei/dataset/PanTSMini_Label.tar.gz
 ```
 
 #### Official training set
