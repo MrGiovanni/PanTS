@@ -19,8 +19,8 @@ for i in {1..9}; do
     echo "[${i}/9] Downloading $file..."
     wget --show-progress -O "$file" "$url"
 
-    echo "Extracting $file..."
-    tar -xzf "$file" -C ImageTr
+    echo "[${i}/9] Extracting $file..."
+    tar -xzf "$file" -C ImageTr --checkpoint=.500 --checkpoint-action=echo="."
     rm "$file"
 done
 
@@ -29,7 +29,8 @@ file="PanTSMini_ImageTe_00009001_00009901.tar.gz"
 url="https://huggingface.co/datasets/BodyMaps/PanTSMini/resolve/main/$file?download=true"
 echo "Downloading ImageTe file..."
 wget --show-progress -O "$file" "$url"
-tar -xzf "$file" -C ImageTe
+echo "Extracting ImageTe file..."
+tar -xzf "$file" -C ImageTe --checkpoint=.500 --checkpoint-action=echo="."
 rm "$file"
 
 cd ..

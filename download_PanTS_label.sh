@@ -12,23 +12,38 @@ if [ "$PanTSMini_Label_URL" != "NA" ]; then
 
     echo "Extracting PanTSMini_Label.tar.gz..."
     mkdir -p LabelAll
-    tar -xzf PanTSMini_Label.tar.gz -C LabelAll
+    tar -xzf PanTSMini_Label.tar.gz -C LabelAll --checkpoint=.1000 --checkpoint-action=echo="."
     rm PanTSMini_Label.tar.gz
 
     mkdir -p LabelTr
     mkdir -p LabelTe
 
-    echo "Moving training labels..."
-    for i in $(seq 1 9000); do
-        folder=$(printf "PanTS_%08d" "$i")
-        mv "LabelAll/$folder" LabelTr/
-    done
+    echo "Moving training labels (PanTS_00000001 to PanTS_00009000)..."
+    # Use find with printf for efficiency - moves files in large batches
+    # This is much more efficient than spawning 9000 individual mv processes via seq
+    cd LabelAll
+    
+    # Use find to list directories, filter by numeric range, and move in batches
+    # This approach minimizes subprocess creation
+    find . -maxdepth 1 -type d \( \
+           -name 'PanTS_00000*' -o \
+           -name 'PanTS_00001*' -o \
+           -name 'PanTS_00002*' -o \
+           -name 'PanTS_00003*' -o \
+           -name 'PanTS_00004*' -o \
+           -name 'PanTS_00005*' -o \
+           -name 'PanTS_00006*' -o \
+           -name 'PanTS_00007*' -o \
+           -name 'PanTS_00008*' -o \
+           -name 'PanTS_00009000' \
+    \) -print0 | xargs -0 -r mv -t ../LabelTr/
+    cd ..
 
-    echo "Moving testing labels..."
-    for i in $(seq 9001 9901); do
-        folder=$(printf "PanTS_%08d" "$i")
-        mv "LabelAll/$folder" LabelTe/
-    done
+    echo "Moving testing labels (PanTS_00009001 to PanTS_00009901)..."
+    # Move all remaining directories (testing labels: PanTS_00009001 to PanTS_00009901)
+    cd LabelAll
+    find . -maxdepth 1 -type d -name 'PanTS_00009*' -print0 | xargs -0 -r mv -t ../LabelTe/
+    cd ..
 
     rmdir LabelAll 2>/dev/null || true
 else
