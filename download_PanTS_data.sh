@@ -20,7 +20,7 @@ for i in {1..9}; do
     wget --show-progress -O "$file" "$url"
 
     echo "[${i}/9] Extracting $file..."
-    tar -xzf "$file" -C ImageTr --checkpoint=.500 --checkpoint-action=echo="."
+    tar -xzf "$file" -C ImageTr --checkpoint=500 --checkpoint-action=echo="."
     rm "$file"
 done
 
@@ -30,7 +30,7 @@ url="https://huggingface.co/datasets/BodyMaps/PanTSMini/resolve/main/$file?downl
 echo "Downloading ImageTe file..."
 wget --show-progress -O "$file" "$url"
 echo "Extracting ImageTe file..."
-tar -xzf "$file" -C ImageTe --checkpoint=.500 --checkpoint-action=echo="."
+tar -xzf "$file" -C ImageTe --checkpoint=500 --checkpoint-action=echo="."
 rm "$file"
 
 cd ..

@@ -12,19 +12,19 @@ if [ "$PanTSMini_Label_URL" != "NA" ]; then
 
     echo "Extracting PanTSMini_Label.tar.gz..."
     mkdir -p LabelAll
-    tar -xzf PanTSMini_Label.tar.gz -C LabelAll --checkpoint=.1000 --checkpoint-action=echo="."
+    tar -xzf PanTSMini_Label.tar.gz -C LabelAll --checkpoint=1000 --checkpoint-action=echo="."
     rm PanTSMini_Label.tar.gz
 
     mkdir -p LabelTr
     mkdir -p LabelTe
 
     echo "Moving training labels (PanTS_00000001 to PanTS_00009000)..."
-    # Use find with printf for efficiency - moves files in large batches
+    # Use find with xargs for efficiency - moves files in large batches
     # This is much more efficient than spawning 9000 individual mv processes via seq
     cd LabelAll
     
-    # Use find to list directories, filter by numeric range, and move in batches
-    # This approach minimizes subprocess creation
+    # Use find to move directories in the training range (PanTS_00000001 to PanTS_00009000)
+    # Exclude testing range (PanTS_00009001-PanTS_00009901) to avoid overlaps
     find . -maxdepth 1 -type d \( \
            -name 'PanTS_00000*' -o \
            -name 'PanTS_00001*' -o \
@@ -34,9 +34,10 @@ if [ "$PanTSMini_Label_URL" != "NA" ]; then
            -name 'PanTS_00005*' -o \
            -name 'PanTS_00006*' -o \
            -name 'PanTS_00007*' -o \
-           -name 'PanTS_00008*' -o \
-           -name 'PanTS_00009000' \
-    \) -print0 | xargs -0 -r mv -t ../LabelTr/
+           -name 'PanTS_00008*' \
+    \) ! -name 'PanTS_00009[0-9][0-9][0-9]' -print0 | xargs -0 -r mv -t ../LabelTr/
+    # Also move PanTS_00009000 specifically (it's in training range)
+    [ -d PanTS_00009000 ] && mv PanTS_00009000 ../LabelTr/
     cd ..
 
     echo "Moving testing labels (PanTS_00009001 to PanTS_00009901)..."
