@@ -7,8 +7,8 @@
 <div align="center">
 
 
-[![pants dataset](https://img.shields.io/badge/PanTS-Dataset-FF4040.svg)](https://github.com/MrGiovanni/PanTS?tab=readme-ov-file#pants-dataset)
-[![pants benchmark](https://img.shields.io/badge/PanTS-Benchmark-FF4040.svg)](https://github.com/MrGiovanni/PanTS?tab=readme-ov-file#pants-benchmark)
+[![pants dataset](https://img.shields.io/badge/PanTS-Dataset-FF4040.svg)](https://github.com/MrGiovanni/PanTS?tab=readme-ov-file#pants-dataset-paired-image-mask-report)
+[![pants benchmark](https://img.shields.io/badge/PanTS-Benchmark-FF4040.svg)](https://github.com/MrGiovanni/PanTS?tab=readme-ov-file#pants-benchmark-official-in-distribution-test-set)
 [![pants model](https://img.shields.io/badge/PanTS-Model-FF4040.svg)](https://github.com/MrGiovanni/PanTS?tab=readme-ov-file#pants-model) <br/>
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=MrGiovanni/PanTS&left_color=%2363C7E6&right_color=%23CEE75F)
 [![GitHub Repo stars](https://img.shields.io/github/stars/MrGiovanni/PanTS?style=social)](https://github.com/MrGiovanni/PanTS/stargazers) 
