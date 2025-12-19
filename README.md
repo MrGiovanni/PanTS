@@ -34,6 +34,7 @@ NeurIPS 2025 <br/>
 
 # PanTS Dataset: Paired Image-Mask-Report
 
+#### Four lines of code to download the dataset
 ```shell
 git clone https://github.com/MrGiovanni/PanTS.git
 cd PanTS
