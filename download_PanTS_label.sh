@@ -3,6 +3,13 @@ set -e
 
 PanTSMini_Label_URL=${1:-NA}
 
+# Detect GNU tar for progress indicator support
+if tar --version 2>/dev/null | grep -q "GNU"; then
+    TAR_PROGRESS="--checkpoint=1000 --checkpoint-action=dot"
+else
+    TAR_PROGRESS=""
+fi
+
 cd data/
 
 if [ "$PanTSMini_Label_URL" != "NA" ]; then
@@ -12,7 +19,7 @@ if [ "$PanTSMini_Label_URL" != "NA" ]; then
 
     echo "Extracting PanTSMini_Label.tar.gz..."
     mkdir -p LabelAll
-    tar -xzf PanTSMini_Label.tar.gz -C LabelAll --checkpoint=1000 --checkpoint-action=echo="."
+    tar -xzf PanTSMini_Label.tar.gz -C LabelAll $TAR_PROGRESS
     rm PanTSMini_Label.tar.gz
 
     mkdir -p LabelTr

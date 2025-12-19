@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
 
+# Detect GNU tar for progress indicator support
+if tar --version 2>/dev/null | grep -q "GNU"; then
+    TAR_PROGRESS="--checkpoint=500 --checkpoint-action=dot"
+else
+    TAR_PROGRESS=""
+fi
+
 cd data/
 
 echo "Downloading metadata.xlsx..."
@@ -20,7 +27,7 @@ for i in {1..9}; do
     wget --show-progress -O "$file" "$url"
 
     echo "[${i}/9] Extracting $file..."
-    tar -xzf "$file" -C ImageTr --checkpoint=500 --checkpoint-action=echo="."
+    tar -xzf "$file" -C ImageTr $TAR_PROGRESS
     rm "$file"
 done
 
@@ -30,7 +37,7 @@ url="https://huggingface.co/datasets/BodyMaps/PanTSMini/resolve/main/$file?downl
 echo "Downloading ImageTe file..."
 wget --show-progress -O "$file" "$url"
 echo "Extracting ImageTe file..."
-tar -xzf "$file" -C ImageTe --checkpoint=500 --checkpoint-action=echo="."
+tar -xzf "$file" -C ImageTe $TAR_PROGRESS
 rm "$file"
 
 cd ..
