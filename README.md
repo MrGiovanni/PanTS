@@ -38,7 +38,7 @@ NeurIPS 2025 <br/>
 git clone https://github.com/MrGiovanni/PanTS.git
 cd PanTS
 bash download_PanTS_data.sh # It needs ~300GB storage
-bash download_PanTS_label.sh http://www.cs.jhu.edu/~zongwei/dataset/PanTSMini_Label.tar.gz
+bash download_PanTS_label.sh # It needs ~70GB storage
 ```
 
 #### Official training set

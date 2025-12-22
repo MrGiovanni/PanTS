@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PanTSMini_Label_URL=${1:-NA}
+PanTSMini_Label_URL=${1:-http://www.cs.jhu.edu/~zongwei/dataset/PanTSMini_Label.tar.gz}
 
 # Detect GNU tar for progress indicator support
 if tar --version 2>/dev/null | grep -q "GNU"; then
@@ -12,42 +12,38 @@ fi
 
 cd data/
 
-if [ "$PanTSMini_Label_URL" != "NA" ]; then
-    # Download and extract PanTSMini_Label.tar.gz
-    echo "Downloading PanTSMini_Label.tar.gz..."
-    wget --show-progress -O PanTSMini_Label.tar.gz "$PanTSMini_Label_URL"
+# Download and extract PanTSMini_Label.tar.gz
+echo "Downloading PanTSMini_Label.tar.gz..."
+wget --show-progress -O PanTSMini_Label.tar.gz "$PanTSMini_Label_URL"
 
-    echo "Extracting PanTSMini_Label.tar.gz..."
-    mkdir -p LabelAll
-    tar -xzf PanTSMini_Label.tar.gz -C LabelAll $TAR_PROGRESS
-    rm PanTSMini_Label.tar.gz
+echo "Extracting PanTSMini_Label.tar.gz..."
+mkdir -p LabelAll
+tar -xzf PanTSMini_Label.tar.gz -C LabelAll $TAR_PROGRESS
+rm PanTSMini_Label.tar.gz
 
-    mkdir -p LabelTr
-    mkdir -p LabelTe
+mkdir -p LabelTr
+mkdir -p LabelTe
 
-    echo "Moving training labels (PanTS_00000001 to PanTS_00009000)..."
-    # Use find with xargs for efficiency - moves files in large batches
-    # This is much more efficient than spawning 9000 individual mv processes via seq
-    cd LabelAll
-    
-    # Move directories in the training range using a tight pattern
-    # Pattern PanTS_0000[0-8]* matches PanTS_00000001 to PanTS_00008999
-    # Then explicitly add PanTS_00009000
-    find . -maxdepth 1 -type d \( \
-           -name 'PanTS_0000[0-8]*' -o \
-           -name 'PanTS_00009000' \
-    \) -print0 | xargs -0 -r mv -t ../LabelTr/
-    cd ..
+echo "Moving training labels (PanTS_00000001 to PanTS_00009000)..."
+# Use find with xargs for efficiency - moves files in large batches
+# This is much more efficient than spawning 9000 individual mv processes via seq
+cd LabelAll
 
-    echo "Moving testing labels (PanTS_00009001 to PanTS_00009901)..."
-    # Move all remaining directories (testing labels: PanTS_00009001 to PanTS_00009901)
-    cd LabelAll
-    find . -maxdepth 1 -type d -name 'PanTS_00009*' -print0 | xargs -0 -r mv -t ../LabelTe/
-    cd ..
+# Move directories in the training range using a tight pattern
+# Pattern PanTS_0000[0-8]* matches PanTS_00000001 to PanTS_00008999
+# Then explicitly add PanTS_00009000
+find . -maxdepth 1 -type d \( \
+       -name 'PanTS_0000[0-8]*' -o \
+       -name 'PanTS_00009000' \
+\) -print0 | xargs -0 -r mv -t ../LabelTr/
+cd ..
 
-    rmdir LabelAll 2>/dev/null || true
-else
-    echo "Please email Zongwei Zhou (zzhou82@jh.edu) to request the early access to the PanTSMini_Label.tar.gz file."
-fi
+echo "Moving testing labels (PanTS_00009001 to PanTS_00009901)..."
+# Move all remaining directories (testing labels: PanTS_00009001 to PanTS_00009901)
+cd LabelAll
+find . -maxdepth 1 -type d -name 'PanTS_00009*' -print0 | xargs -0 -r mv -t ../LabelTe/
+cd ..
+
+rmdir LabelAll 2>/dev/null || true
 
 cd ..
