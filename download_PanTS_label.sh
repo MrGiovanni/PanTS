@@ -25,23 +25,25 @@ mkdir -p LabelTr
 mkdir -p LabelTe
 
 echo "Moving training labels (PanTS_00000001 to PanTS_00009000)..."
-# Use find with xargs for efficiency - moves files in large batches
+# Use find with -exec ... + for efficiency - moves files in large batches
 # This is much more efficient than spawning 9000 individual mv processes via seq
 cd LabelAll
 
 # Move directories in the training range using a tight pattern
 # Pattern PanTS_0000[0-8]* matches PanTS_00000001 to PanTS_00008999
 # Then explicitly add PanTS_00009000
+# Use sh -c wrapper for cross-platform compatibility (mv -t is GNU-only)
 find . -maxdepth 1 -type d \( \
        -name 'PanTS_0000[0-8]*' -o \
        -name 'PanTS_00009000' \
-\) -print0 | xargs -0 -r mv -t ../LabelTr/
+\) -exec sh -c 'mv "$@" ../LabelTr/' _ {} +
 cd ..
 
 echo "Moving testing labels (PanTS_00009001 to PanTS_00009901)..."
 # Move all remaining directories (testing labels: PanTS_00009001 to PanTS_00009901)
+# Use sh -c wrapper for cross-platform compatibility (mv -t is GNU-only)
 cd LabelAll
-find . -maxdepth 1 -type d -name 'PanTS_00009*' -print0 | xargs -0 -r mv -t ../LabelTe/
+find . -maxdepth 1 -type d -name 'PanTS_00009*' -exec sh -c 'mv "$@" ../LabelTe/' _ {} +
 cd ..
 
 rmdir LabelAll 2>/dev/null || true
