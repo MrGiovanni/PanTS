@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PanTSMini_Label_URL=${1:-NA}
+PanTSMini_Label_URL=http://www.cs.jhu.edu/~zongwei/dataset/PanTSMini_Label.tar.gz
 
 cd data/
 
