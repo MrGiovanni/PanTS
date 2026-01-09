@@ -93,10 +93,10 @@ bash download_PanTS_label.sh
 # Citation
 
 ```
-@article{li2025pants,
-  title={PanTS: The Pancreatic Tumor Segmentation Dataset},
-  author={Li, Wenxuan and Zhou, Xinze and Chen, Qi and Lin, Tianyu and Bassi, Pedro RAS and Plotka, Szymon and Cwikla, Jaroslaw B and Chen, Xiaoxi and Ye, Chen and Zhu, Zheren and others},
-  journal={arXiv preprint arXiv:2507.01291},
+@inproceedings{li2025pants,
+  title={Pants: The pancreatic tumor segmentation dataset},
+  author={Li, Wenxuan and Zhou, Xinze and Chen, Qi and Lin, Tianyu and Bassi, Pedro RAS and Chen, Xiaoxi and Ye, Chen and Zhu, Zheren and Ding, Kai and Li, Heng and others},
+  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
   year={2025},
   url={https://github.com/MrGiovanni/PanTS}
 }
