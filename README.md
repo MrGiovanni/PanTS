@@ -69,7 +69,7 @@ bash download_PanTS_label.sh
 > [!NOTE]
 > We are calling for more baseline methods. 
 
-| model  | paper | github | P-Sen<sup>†</sup> | T-Sen<sup>‡</sup> | Spe | AUC | DSC | checkpoint |
+| model  | paper | github | P-Sen<sup>†</sup> | T-Sen<sup>‡</sup> | Spe | AUC | DSC | model |
 |:---|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | nnU-Net | [![arXiv](https://img.shields.io/badge/arXiv-1809.10486-FF4040.svg)](https://arxiv.org/abs/1809.10486) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/nnUNet.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/nnUNet)
 | SuPreM | [![arXiv](https://img.shields.io/badge/arXiv-2501.11253-FF4040.svg)](https://arxiv.org/abs/2501.11253) | [![GitHub stars](https://img.shields.io/github/stars/MrGiovanni/SuPreM.svg?logo=github&label=Stars)](https://github.com/MrGiovanni/SuPreM)
@@ -78,7 +78,7 @@ bash download_PanTS_label.sh
 | UNet++ | [![arXiv](https://img.shields.io/badge/arXiv-1912.05074-FF4040.svg)](https://arxiv.org/abs/1912.05074) | [![GitHub stars](https://img.shields.io/github/stars/MrGiovanni/UNetPlusPlus.svg?logo=github&label=Stars)](https://github.com/MrGiovanni/UNetPlusPlus)
 | TransUNet | [![arXiv](https://img.shields.io/badge/arXiv-2102.04306-FF4040.svg)](https://arxiv.org/abs/2102.04306) | [![GitHub stars](https://img.shields.io/github/stars/Beckschen/TransUNet.svg?logo=github&label=Stars)](https://github.com/Beckschen/TransUNet)
 | MedNeXt | [![arXiv](https://img.shields.io/badge/arXiv-2303.09975-FF4040.svg)](https://arxiv.org/pdf/2303.09975) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/MedNeXt.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/MedNeXt)
-| MedFormer | [![arXiv](https://img.shields.io/badge/arXiv-2203.00131-FF4040.svg)](https://arxiv.org/abs/2203.00131) | [![GitHub stars](https://img.shields.io/github/stars/yhygao/CBIM-Medical-Image-Segmentation.svg?logo=github&label=Stars)](https://github.com/yhygao/CBIM-Medical-Image-Segmentation) | 76% |  | 91% | | | [link](https://huggingface.co/AbdomenAtlas/MedFormerPanTS)
+| MedFormer | [![arXiv](https://img.shields.io/badge/arXiv-2203.00131-FF4040.svg)](https://arxiv.org/abs/2203.00131) | [![GitHub stars](https://img.shields.io/github/stars/yhygao/CBIM-Medical-Image-Segmentation.svg?logo=github&label=Stars)](https://github.com/yhygao/CBIM-Medical-Image-Segmentation) | 76% |  | 91% | | | [HF](https://huggingface.co/AbdomenAtlas/MedFormerPanTS)
 | UniSeg | [![arXiv](https://img.shields.io/badge/arXiv-2304.03493-FF4040.svg)](https://arxiv.org/abs/2304.03493) | [![GitHub stars](https://img.shields.io/github/stars/yeerwen/UniSeg.svg?logo=github&label=Stars)](https://github.com/yeerwen/UniSeg)
 | LHU-Net | [![arXiv](https://img.shields.io/badge/arXiv-2404.05102-FF4040.svg)](https://arxiv.org/abs/2404.05102) | [![GitHub stars](https://img.shields.io/github/stars/xmindflow/LHUNet.svg?logo=github&label=Stars)](https://github.com/xmindflow/LHUNet)
 
