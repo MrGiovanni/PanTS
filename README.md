@@ -55,6 +55,7 @@ bash download_PanTS_label.sh
 > To submit your model for evaluation, please email Dr. Zongwei Zhou (zzhou82@jh.edu) with:
 > - Your model checkpoint
 > - Testing script
+> - In-distribution test results
 > - A brief README with usage instructions
 >
 > The JHU Team will assess performance on three large out-of-distribution test sets and a RSNA Dataset, for which all pancreatic tumors have been re-annotated by our team.
