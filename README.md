@@ -30,7 +30,7 @@ As the largest and most comprehensive resource of its kind, PanTS offers a new b
 Johns Hopkins University <br/>
 NeurIPS 2025 <br/>
 
-<a href='https://www.zongweiz.com/dataset'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~zongwei/publication/li2025pants.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a>
+<a href='https://www.zongweiz.com/dataset'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://www.cs.jhu.edu/~zongwei/publication/li2025pants.pdf'><img src='https://img.shields.io/badge/Paper-PDF-purple'></a> <a href='document/DH_Third_Place_PanTS_Health_Certificate.pdf'><img src='https://img.shields.io/badge/DH-3rd_Place_Certificate-FFD700'></a>
 
 # PanTS Dataset: Paired Image-Mask-Report
 
