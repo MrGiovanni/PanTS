@@ -101,7 +101,7 @@ bash download_PanTS_label.sh
 
 ```
 @inproceedings{li2025pants,
-  title={Pants: The pancreatic tumor segmentation dataset},
+  title={{PanTS}: The Pancreatic Tumor Segmentation Dataset},
   author={Li, Wenxuan and Zhou, Xinze and Chen, Qi and Lin, Tianyu and Bassi, Pedro RAS and Chen, Xiaoxi and Ye, Chen and Zhu, Zheren and Ding, Kai and Li, Heng and others},
   booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
   year={2025},
