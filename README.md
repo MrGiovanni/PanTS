@@ -76,7 +76,7 @@ bash download_PanTS_label.sh
 
 | model  | paper | github | P-Sen<sup>†</sup> | T-Sen<sup>‡</sup> | Spe | AUC | DSC | model |
 |:---|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| nnU-Net | [![arXiv](https://img.shields.io/badge/arXiv-1809.10486-FF4040.svg)](https://arxiv.org/abs/1809.10486) | [![GitHub stars](https://img.shields.io/github/stars/MIC-DKFZ/nnUNet.svg?logo=github&label=Stars)](https://github.com/MIC-DKFZ/nnUNet) | | | | | | |
+| nnU-Net | [![arXiv](https://img.shields.io/badge/arXiv-1809.10486-FF4040.svg)](https://arxiv.org/abs/1809.10486) | [![GitHub stars](https://img.shields.io/github/stars/edomerli/nnUNet-PanTS-regions.svg?logo=github&label=Stars)](https://github.com/edomerli/nnUNet-PanTS-regions) | 83.4% | 76.2% | 90.1% | 0.902 | 50.9% | [HF](https://huggingface.co/edomerli/nnUNet-PanTS-regions) |
 | SuPreM | [![arXiv](https://img.shields.io/badge/arXiv-2501.11253-FF4040.svg)](https://arxiv.org/abs/2501.11253) | [![GitHub stars](https://img.shields.io/github/stars/MrGiovanni/SuPreM.svg?logo=github&label=Stars)](https://github.com/MrGiovanni/SuPreM) | | | | | | |
 | Models Genesis | [![arXiv](https://img.shields.io/badge/arXiv-2004.07882-FF4040.svg)](https://arxiv.org/abs/2004.07882) | [![GitHub stars](https://img.shields.io/github/stars/MrGiovanni/ModelsGenesis.svg?logo=github&label=Stars)](https://github.com/MrGiovanni/ModelsGenesis) | | | | | | |
 | Universal Model | [![arXiv](https://img.shields.io/badge/arXiv-2301.00785-FF4040.svg)](https://arxiv.org/abs/2301.00785) | [![GitHub stars](https://img.shields.io/github/stars/ljwztc/CLIP-Driven-Universal-Model.svg?logo=github&label=Stars)](https://github.com/ljwztc/CLIP-Driven-Universal-Model) | | | | | | |
